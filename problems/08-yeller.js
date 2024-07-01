@@ -15,7 +15,7 @@ function yeller(arr) {
 let words1 = ['hello', 'world'];
 let yelled1 = yeller(['hello', 'world']);
 console.log(yelled1); //=> [ 'HELLO!', 'WORLD!' ]
-console.log(words1 === yelled1); //=> false
+console.log(words1 === yelled1); //=> false;
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = yeller;
