@@ -6,13 +6,27 @@ contains "length" elements. The first element of the sequence is always the
 element of the sequence.
 */
 
-// Your code here 
+// Your code here
 
-// console.log(doubleSequence(7, 3));  // [7, 14, 28]
-// console.log(doubleSequence(3, 5));  // [3, 6, 12, 24, 48]
-// console.log(doubleSequence(5, 3));  // [5, 10, 20]
-// console.log(doubleSequence(5, 4));  // [5, 10, 20, 40]
-// console.log(doubleSequence(5, 0));  // [ ]
+function doubleSequence(num1, num2) {
+    let arr = [];
+    for (let i = 0; i <= num2 - 1; i++) {
+        if (i === 0) {
+            arr.push(num1);
+        }
+        if (i > 0) {
+            let double = arr[i - 1] * 2;
+            arr.push(double);
+        }
+    }
+    return arr;
+}
+
+console.log(doubleSequence(7, 3)); // [7, 14, 28]
+console.log(doubleSequence(3, 5)); // [3, 6, 12, 24, 48]
+console.log(doubleSequence(5, 3)); // [5, 10, 20]
+console.log(doubleSequence(5, 4)); // [5, 10, 20, 40]
+console.log(doubleSequence(5, 0)); // [ ]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = doubleSequence;

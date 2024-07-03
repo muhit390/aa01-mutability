@@ -5,16 +5,30 @@ that end in the given suffix. If the value passed in is not an array, return an
 empty array.
 */
 
-// Your code here 
+// Your code here
+
+function chooseyEndings(arr, str) {
+    if (!Array.isArray(arr)) {
+        return [];
+    }
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].endsWith(str)) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr;
+
+}
 
 
-// console.log(chooseyEndings(['family', 'hound', 'catalyst','fly', 'timidly', 'bond'], 'ly'));
+console.log(chooseyEndings(['family', 'hound', 'catalyst', 'fly', 'timidly', 'bond'], 'ly'));
 // //=> [ 'family', 'fly', 'timidly' ]
 
-// console.log(chooseyEndings(['family', 'hound', 'catalyst','fly', 'timidly', 'bond'], 'nd'));
+console.log(chooseyEndings(['family', 'hound', 'catalyst', 'fly', 'timidly', 'bond'], 'nd'));
 // //=> [ 'hound', 'bond' ]
 
-// console.log(chooseyEndings(17, 'ily'));
+console.log(chooseyEndings(17, 'ily'));
 // //=> [ ]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/

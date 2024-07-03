@@ -7,16 +7,32 @@ array and instead return a new array.
 HINT: you can use Array's slice() method to create a copy of an array
 */
 
-// Your code here 
+// Your code here
+function rotateRight(array, num) {
+    const length = array.length;
+
+    num = ((num % length) + length) % length;
 
 
-// let arr = ['a', 'b', 'c', 'd', 'e'];
-// console.log(rotateRight(arr, 2)); // [ 'd', 'e', 'a', 'b', 'c' ]
-// console.log(arr); // [ 'a', 'b', 'c', 'd', 'e' ]
+    const part1 = array.slice(-num);
 
-// let animals = ['wombat', 'koala', 'opossum', 'kangaroo'];
-// console.log(rotateRight(animals, 3)); // [ 'koala', 'opossum', 'kangaroo', 'wombat' ]
-// console.log(animals); // [ 'wombat', 'koala', 'opossum', 'kangaroo' ]
+
+    const part2 = array.slice(0, length - num);
+
+
+    const newArray = part1.concat(part2);
+
+    return newArray;
+}
+
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+console.log(rotateRight(arr, 2)); // [ 'd', 'e', 'a', 'b', 'c' ]
+console.log(arr); // [ 'a', 'b', 'c', 'd', 'e' ]
+
+let animals = ['wombat', 'koala', 'opossum', 'kangaroo'];
+console.log(rotateRight(animals, 3)); // [ 'koala', 'opossum', 'kangaroo', 'wombat' ]
+console.log(animals); // [ 'wombat', 'koala', 'opossum', 'kangaroo' ]
 
 /******************** DO NOT MODIFY ANY CODE BELOW THIS LINE *****************/
 module.exports = rotateRight;
